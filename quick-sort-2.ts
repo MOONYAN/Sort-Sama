@@ -1,16 +1,16 @@
-function quickSort2(arr: number[]) {
+function quickSort2<T>(arr: T[], compare: (a: T, b: T) => number) {
 
     function swap(i: number, j: number) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 
     function partition(left: number, right: number): number {
-        let pivot = arr[(left + right) >>> 1];
+        let pivot: T = arr[(left + right) >>> 1];
         while (true) {
-            while (arr[left] <= pivot) {
+            while (compare(arr[left], pivot) <= 0) {
                 left++;
             }
-            while (arr[right] > pivot) {
+            while (compare(arr[right], pivot) > 0) {
                 right--;
             }
             if (left >= right) {
@@ -32,5 +32,5 @@ function quickSort2(arr: number[]) {
 }
 
 let testcase = [87, 86, 85, 87];
-quickSort2(testcase);
+quickSort2(testcase, (a, b) => a - b);
 console.log(testcase);
