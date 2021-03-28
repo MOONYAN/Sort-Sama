@@ -1,16 +1,16 @@
-function quickSort(arr: number[]) {
+function quickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
 
-    const swap = (a: number, b: number) => {
-        [arr[a], arr[b]] = [arr[b], arr[a]];
+    const swap = (i: number, j: number) => {
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 
     const partition = (start: number, end: number): number => {
 
-        const pivot: number = arr[end];
+        const pivot: T = arr[end];
         let nextIdx: number = start;
 
         for (let i = start; i < end; i++) {
-            if (arr[i] < pivot) {
+            if (compare(arr[i], pivot) <= 0) {
                 swap(i, nextIdx);
                 nextIdx++;
             }
@@ -33,5 +33,5 @@ function quickSort(arr: number[]) {
 }
 
 let testcase1 = [9, 4, 1, 6, 7, 3, 8, 2, 5];
-quickSort(testcase1);
+quickSort(testcase1, (a, b) => a - b);
 console.log(testcase1);
