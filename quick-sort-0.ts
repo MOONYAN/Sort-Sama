@@ -1,9 +1,5 @@
 function quickSort0<T>(unsorted: T[], compare: (a: T, b: T) => number): T[] {
 
-    function swap(arr: T[], i: number, j: number) {
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-
     function sort(arr: T[]): T[] {
 
         if (arr.length === 0) {
