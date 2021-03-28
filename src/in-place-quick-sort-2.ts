@@ -1,4 +1,4 @@
-function quickSort2<T>(arr: T[], compare: (a: T, b: T) => number) {
+export function inPlaceQuickSort2<T>(arr: T[], compare: (a: T, b: T) => number) {
 
     function swap(i: number, j: number) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -30,7 +30,3 @@ function quickSort2<T>(arr: T[], compare: (a: T, b: T) => number) {
 
     sort(0, arr.length - 1);
 }
-
-let testcase = [87, 86, 85, 87];
-quickSort2(testcase, (a, b) => a - b);
-console.log(testcase);

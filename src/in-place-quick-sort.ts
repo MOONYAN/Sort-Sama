@@ -1,10 +1,10 @@
-function quickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
+export function inPlaceQuickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
 
-    const swap = (i: number, j: number) => {
+    function swap(i: number, j: number) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 
-    const partition = (start: number, end: number): number => {
+    function partition(start: number, end: number): number {
 
         const pivot: T = arr[end];
         let nextIdx: number = start;
@@ -20,7 +20,7 @@ function quickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
         return nextIdx;
     }
 
-    const sort = (start: number, end: number) => {
+    function sort(start: number, end: number) {
 
         if (start < end) {
             const pos: number = partition(start, end);
@@ -31,7 +31,3 @@ function quickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
 
     sort(0, arr.length - 1);
 }
-
-let testcase1 = [9, 4, 1, 6, 7, 3, 8, 2, 5];
-quickSort(testcase1, (a, b) => a - b);
-console.log(testcase1);

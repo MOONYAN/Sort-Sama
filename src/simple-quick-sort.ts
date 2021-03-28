@@ -1,4 +1,4 @@
-function quickSort0<T>(unsorted: T[], compare: (a: T, b: T) => number): T[] {
+export function simpleQuickSort<T>(unsorted: T[], compare: (a: T, b: T) => number): T[] {
 
     function sort(arr: T[]): T[] {
 
@@ -22,7 +22,3 @@ function quickSort0<T>(unsorted: T[], compare: (a: T, b: T) => number): T[] {
 
     return sort(unsorted);
 }
-
-
-let testcase = [87, 86, 85, 87];
-console.log(quickSort0(testcase, (a, b) => a - b));
