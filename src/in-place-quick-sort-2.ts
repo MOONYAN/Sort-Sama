@@ -5,18 +5,23 @@ export function inPlaceQuickSort2<T>(arr: T[], compare: (a: T, b: T) => number) 
     }
 
     function partition(left: number, right: number): number {
-        let pivot: T = arr[(left + right) >>> 1];
+
+        let pivot: T = arr[left];
+
+        let i = left + 1, j = right;
+
         while (true) {
-            while (compare(arr[left], pivot) <= 0) {
-                left++;
+            while (compare(arr[i], pivot) <= 0) {
+                i++;
             }
-            while (compare(arr[right], pivot) > 0) {
-                right--;
+            while (compare(arr[j], pivot) > 0) {
+                j--;
             }
-            if (left >= right) {
-                return right;
+            if (i >= j) {
+                swap(left, j);
+                return j;
             }
-            swap(left, right);
+            swap(i, j);
         }
     }
 

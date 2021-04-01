@@ -44,3 +44,12 @@ test('in: descending', () => {
 
     expect(testcase).toEqual(expected);
 });
+
+test('in: random', () => {
+
+    let testcase = [9, 4, 1, 6, 7, 3, 8, 2, 5];
+    sort(testcase, (a, b) => a - b);
+    const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    expect(testcase).toEqual(expected);
+})
