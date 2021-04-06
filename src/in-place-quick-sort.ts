@@ -6,11 +6,12 @@ export function inPlaceQuickSort<T>(arr: T[], compare: (a: T, b: T) => number) {
 
     function partition(start: number, end: number): number {
 
+        swap((start + end) >>> 1, end);
         const pivot: T = arr[end];
         let nextIdx: number = start;
 
         for (let i = start; i < end; i++) {
-            if (compare(arr[i], pivot) <= 0) {
+            if (compare(arr[i], pivot) < 0) {
                 swap(i, nextIdx);
                 nextIdx++;
             }

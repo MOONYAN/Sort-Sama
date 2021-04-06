@@ -5,11 +5,12 @@ export function quickSelect<T>(arr: T[], k: number, compare: (a: T, b: T) => num
     }
 
     function partition(start: number, end: number): number {
+        swap((start + end) >>> 1, end);
         const pivot = arr[end];
         let nextIdx = start;
 
         for (let i = start; i < end; i++) {
-            if (compare(arr[i], pivot) <= 0) {
+            if (compare(arr[i], pivot) < 0) {
                 swap(i, nextIdx);
                 nextIdx++;
             }
