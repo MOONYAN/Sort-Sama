@@ -14,3 +14,15 @@
 - Implement heap sort.
 - Implement quick select.
 
+# Skill
+
+- TypeScript
+- Jest
+- CircleCI
+
+# Run Test Suites
+
+```
+yarn
+yarn test
+```
