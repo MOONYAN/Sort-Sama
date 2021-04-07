@@ -22,9 +22,9 @@ jobs:
           command: yarn test
           name: RUN YARN tests
       - store_test_results:
-          path: test-results
+          path: coverage
       - store_artifacts:
-          path: test-results
+          path: coverage
 workflows:
   test_my_app:
     jobs:
