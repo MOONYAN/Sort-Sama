@@ -49,7 +49,7 @@ test('in: random', () => {
 
     let testcase = [9, 4, 1, 6, 7, 3, 8, 2, 5];
     let result = sort(testcase, (a, b) => a - b);
-    let expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let expected = [1, 2, 3, 4, 5, 6, 7, 8];
 
     expect(result).toEqual(expected);
 })
