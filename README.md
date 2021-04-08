@@ -13,6 +13,7 @@
 - Implement insertion sort.
 - Implement heap sort.
 - Implement quick select.
+- Implement bucket sort.
 
 # Skill
 
