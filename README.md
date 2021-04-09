@@ -14,6 +14,7 @@
 - Implement heap sort.
 - Implement quick select.
 - Implement bucket sort.
+- Implement counting sort.
 
 # Skill
 
