@@ -1,4 +1,4 @@
-export function bucketSort<T>(arr: T[], k: number, compare: (a: T, b: T) => number, scatter: (v: T) => number) {
+export function bucketSort<T>(arr: T[], k: number, compare: (a: T, b: T) => number, scatter: (val: T) => number) {
 
     class Bucket {
 
