@@ -29,3 +29,7 @@
 yarn
 yarn test
 ```
+
+# About
+
+- LinkIn https://www.linkedin.com/in/owen-hong-469882165/

@@ -1,6 +1,4 @@
-type Scatter<T> = (val: T) => number;
-
-export function radixSort<T>(arr: T[], k: number, scatters: Scatter<T>[]) {
+export function radixSort<T>(arr: T[], k: number, scatters: Array<(val: T) => number>) {
 
     class Bucket {
 
